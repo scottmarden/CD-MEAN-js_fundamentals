@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS Intermediate</title>
+		<script>
+		//Part I - function to generate a string of 'stars'(*), the length of which is the number passed into the function.
+		function star_string(num){
+			//creates empty string
+			var str = "";
+			//for loop to add a star to the string until length = num
+			for (let i = 0; i < num; i++){
+				str += "*";
+
+			}
+			//return the string of stars
+			return str;
+		}
+		//Part II - function to print strings of stars that are each the length of a number in the given list/array.
+		function draw_stars(arr){
+			//for loop to grab each number in the array
+			for (let i = 0; i < arr.length; i++){
+				//pass the current number into star_string to generate a string of stars
+				var stars = star_string(arr[i]);
+				//print that string before moving on to the next number
+				console.log(stars)
+			}
+		}
+		//Part III - modified draw_stars() from above, now if a string is passed instead of a number, the first letter of the string will be printed instead of stars.
+		function new_draw_stars(arr){
+			//Iterate through the array with for loop
+			for (let i = 0; i < arr.length; i++){
+				//check to see if the item at current index is string or number
+				if (typeof arr[i] == 'string'){
+					//If it's a string, get the first letter, make it lowercase, and assemble a string of that letter, with length equal to the length of the string
+					letter = arr[i][0].toLowerCase()
+					var str = letter;
+					for (let j = 1; j < arr[i].length; j++){
+						str += letter;
+					}
+					console.log(str)
+				}
+				else {
+					//If it isn't a string, do the same as before and print a string of stars with length equal to the current number in the array.
+					var stars = star_string(arr[i]);
+					console.log(stars)
+				}
+			}
+		}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
